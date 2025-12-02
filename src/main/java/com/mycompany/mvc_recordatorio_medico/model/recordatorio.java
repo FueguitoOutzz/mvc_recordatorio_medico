@@ -2,30 +2,30 @@ package com.mycompany.mvc_recordatorio_medico.model;
 
 
 public class recordatorio {
-    private int id;
-    private String fechaHora;
-    private String mensaje;
+    private int idRecordatorio;
+    private String fecha_prog;
     private String estado;
-    public recordatorio(int id, String fechaHora, String mensaje, String estado) {
+    private String mensaje;
+    public recordatorio(int id, String fecha_prog, String mensaje, String estado) {
         setId(id);
-        setFechaHora(fechaHora);
+        setFechaProg(fecha_prog);
         setMensaje(mensaje);
         setEstado(estado);
     }
     public int getId() {
-        return id;
+        return idRecordatorio;
     }
     public void setId(int id) {
-        this.id = id;
+        this.idRecordatorio = id;
     }
-    public String getFechaHora() {
-        return fechaHora;
+    public String getFechaProg() {
+        return fecha_prog;
     }
-    public void setFechaHora(String fechaHora) {
-        if(fechaHora == null || fechaHora.trim().isEmpty()) {
+    public void setFechaProg(String fecha_prog) {
+        if(fecha_prog == null || fecha_prog.trim().isEmpty()) {
             throw new IllegalArgumentException("La fecha y hora del recordatorio no puede estar vacío.");
         }
-        this.fechaHora = fechaHora;
+        this.fecha_prog = fecha_prog;
     }
     public String getMensaje() {
         return mensaje;
@@ -40,6 +40,13 @@ public class recordatorio {
         return estado;
     }
     public void setEstado(String estado) {
-        this.estado = estado;
+        if(estado == null || estado.trim().isEmpty()) {
+            throw new IllegalArgumentException("El estado del recordatorio no puede estar vacío.");
+        }
+        String norm = estado.trim().toUpperCase();
+        if(!norm.equals("PENDIENTE") && !norm.equals("ENVIADO") && !norm.equals("CANCELADO")) {
+            throw new IllegalArgumentException("Estado inválido. Valores permitidos: PENDIENTE, ENVIADO, CANCELADO.");
+        }
+        this.estado = norm;
     }
 }
