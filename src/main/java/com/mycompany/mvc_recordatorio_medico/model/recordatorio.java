@@ -1,12 +1,12 @@
 package com.mycompany.mvc_recordatorio_medico.model;
 
 
-public class recordatorio {
+public class Recordatorio {
     private int idRecordatorio;
     private String fecha_prog;
     private String estado;
     private String mensaje;
-    public recordatorio(int id, String fecha_prog, String mensaje, String estado) {
+    public Recordatorio(int id, String fecha_prog, String mensaje, String estado) {
         setId(id);
         setFechaProg(fecha_prog);
         setMensaje(mensaje);

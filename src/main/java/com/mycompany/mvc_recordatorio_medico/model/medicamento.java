@@ -1,10 +1,10 @@
 package com.mycompany.mvc_recordatorio_medico.model;
 
-public class medicamento {
+public class Medicamento {
     private String nombre;
     private String dosis;
-    private String frecuencia;
-    public medicamento(String nombre, String dosis, String frecuencia) {
+    private int frecuencia;
+    public Medicamento(String nombre, String dosis, int frecuencia) {
         setNombre(nombre);
         setDosis(dosis);
         setFrecuencia(frecuencia);
@@ -27,12 +27,12 @@ public class medicamento {
         }
         this.dosis = dosis;
     }
-    public String getFrecuencia() {
+    public int getFrecuencia() {
         return frecuencia;
     }
-    public void setFrecuencia(String frecuencia) {
-        if(frecuencia == null || frecuencia.trim().isEmpty()) {
-            throw new IllegalArgumentException("La frecuencia del medicamento no puede estar vacía.");
+    public void setFrecuencia(int frecuencia) {
+        if(frecuencia < 0) {
+            throw new IllegalArgumentException("La frecuencia del medicamento no puede ser menor a 0.");
         }
         this.frecuencia = frecuencia;
     }
