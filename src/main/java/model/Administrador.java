@@ -1,4 +1,4 @@
-package com.mycompany.mvc_recordatorio_medico.model;
+package model;
 
 public class Administrador extends Usuario {
 

@@ -4,7 +4,8 @@
 
 package com.mycompany.mvc_recordatorio_medico;
 
-import com.mycompany.mvc_recordatorio_medico.controller.ControladorMedicamentos;
+import controller.ControladorMedicamentos;
+import controller.ControladorMenu;
 
 /**
  *
@@ -14,8 +15,10 @@ public class Mvc_recordatorio_medico {
 
     public static void main(String[] args) {
         ControladorMedicamentos controlador = new ControladorMedicamentos();
+        ControladorMenu controladorMenu = new ControladorMenu();
         
-        controlador.iniciar();
+        controladorMenu.iniciar();
+        //controlador.iniciar();
         
     }
 }
