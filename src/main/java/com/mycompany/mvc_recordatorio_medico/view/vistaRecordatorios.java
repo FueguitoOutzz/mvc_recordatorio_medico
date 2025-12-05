@@ -1,23 +1,23 @@
 package com.mycompany.mvc_recordatorio_medico.view;
 
-import com.mycompany.mvc_recordatorio_medico.model.recordatorio;
+import com.mycompany.mvc_recordatorio_medico.model.Recordatorio;
 import java.util.List;
 import java.util.Scanner;
 
 public class vistaRecordatorios {
 	private static final Scanner SC = new Scanner(System.in);
 
-	public static void mostrarListado(List<recordatorio> list) {
+	public static void mostrarListado(List<Recordatorio> list) {
 		if (list == null || list.isEmpty()) {
 			System.out.println("No hay recordatorios.");
 			return;
 		}
-		for (recordatorio r : list) {
+		for (Recordatorio r : list) {
 			mostrarRecordatorio(r);
 		}
 	}
 
-	public static void mostrarRecordatorio(recordatorio r) {
+	public static void mostrarRecordatorio(Recordatorio r) {
 		if (r == null) return;
 		System.out.println("ID: " + r.getId() + " | Estado: " + r.getEstado() + " | Mensaje: " + r.getMensaje() + " | Fecha: " + r.getFechaProg());
 	}
@@ -33,13 +33,13 @@ public class vistaRecordatorios {
 		return id;
 	}
 
-	public static recordatorio leerRecordatorioDatos() {
+	public static Recordatorio leerRecordatorioDatos() {
 		System.out.print("Mensaje: ");
 		String mensaje = SC.nextLine();
 		System.out.print("Fecha (cadena): ");
 		String fecha = SC.nextLine();
 		System.out.print("Estado (PENDIENTE/ENVIADO/CANCELADO): ");
 		String estado = SC.nextLine();
-		return new recordatorio(0, fecha, mensaje, estado);
+		return new Recordatorio(0, fecha, mensaje, estado);
 	}
 }

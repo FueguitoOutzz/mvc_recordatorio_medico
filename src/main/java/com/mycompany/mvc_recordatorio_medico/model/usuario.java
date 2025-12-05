@@ -1,11 +1,11 @@
 package com.mycompany.mvc_recordatorio_medico.model;
 
-public abstract class usuario {
+public abstract class Usuario {
     private String id;
     private String nombre;
     private String email;
     private String telefono;
-    public usuario(String id, String nombre, String email, String telefono) {
+    public Usuario(String id, String nombre, String email, String telefono) {
         setId(id);
         setNombre(nombre);
         setEmail(email);

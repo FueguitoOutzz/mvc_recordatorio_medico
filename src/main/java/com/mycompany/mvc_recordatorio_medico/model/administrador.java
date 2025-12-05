@@ -1,11 +1,11 @@
 package com.mycompany.mvc_recordatorio_medico.model;
 
-public class administrador extends usuario {
+public class Administrador extends Usuario {
 
-    public administrador(String id, String nombre, String email, String telefono) {
+    public Administrador(String id, String nombre, String email, String telefono) {
         super(id, nombre, email, telefono);
     }
-    public void agregarMedicamento(medicamento m) { 
+    public void agregarMedicamento(Medicamento m) { 
 
     }
     public void gestionarUsuarios() {

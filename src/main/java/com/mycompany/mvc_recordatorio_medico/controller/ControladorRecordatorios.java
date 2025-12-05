@@ -1,44 +1,44 @@
 package com.mycompany.mvc_recordatorio_medico.controller;
 
-import com.mycompany.mvc_recordatorio_medico.model.recordatorio;
+import com.mycompany.mvc_recordatorio_medico.model.Recordatorio;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ControladorRecordatorios {
-	private final List<recordatorio> recordatorios;
+	private final List<Recordatorio> recordatorios;
 	private int nextId = 1;
 
 	public ControladorRecordatorios() {
 		this.recordatorios = new ArrayList<>();
 	}
 
-	public recordatorio agregar(recordatorio r) {
+	public Recordatorio agregar(Recordatorio r) {
 		if (r == null) throw new IllegalArgumentException("Recordatorio no puede ser null");
 		r.setId(nextId++);
 		recordatorios.add(r);
 		return r;
 	}
 
-	public List<recordatorio> listar() {
+	public List<Recordatorio> listar() {
 		return new ArrayList<>(recordatorios);
 	}
 
-	public recordatorio buscarPorId(int id) {
-		for (recordatorio r : recordatorios) {
+	public Recordatorio buscarPorId(int id) {
+		for (Recordatorio r : recordatorios) {
 			if (r.getId() == id) return r;
 		}
 		return null;
 	}
 
 	public boolean eliminar(int id) {
-		recordatorio r = buscarPorId(id);
+		Recordatorio r = buscarPorId(id);
 		if (r != null) {
 			return recordatorios.remove(r);
 		}
 		return false;
 	}
 
-	public boolean actualizar(recordatorio updated) {
+	public boolean actualizar(Recordatorio updated) {
 		if (updated == null) return false;
 		for (int i = 0; i < recordatorios.size(); i++) {
 			if (recordatorios.get(i).getId() == updated.getId()) {

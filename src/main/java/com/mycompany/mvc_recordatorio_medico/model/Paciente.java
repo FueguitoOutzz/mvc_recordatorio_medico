@@ -1,12 +1,12 @@
 package com.mycompany.mvc_recordatorio_medico.model;
 import java.util.ArrayList;
 
-public class paciente extends usuario {
+public class Paciente extends Usuario {
     private int edad;
     private ArrayList<String> historialMedico;
-    private ArrayList<medicamento> medicamentos;
+    private ArrayList<Medicamento> medicamentos;
     
-    public paciente(String id, String nombre, String email, String telefono, int edad, ArrayList<String> historialMedico) {
+    public Paciente(String id, String nombre, String email, String telefono, int edad, ArrayList<String> historialMedico) {
         super(id, nombre, email, telefono);
         setEdad(edad);
         setHistorialMedico(historialMedico);
@@ -31,10 +31,10 @@ public class paciente extends usuario {
             this.historialMedico = historialMedico;
         }
     }
-    public ArrayList<medicamento> getMedicamentos() {
+    public ArrayList<Medicamento> getMedicamentos() {
         return medicamentos;
     }
-    public void setMedicamentos(ArrayList<medicamento> medicamentos) {
+    public void setMedicamentos(ArrayList<Medicamento> medicamentos) {
         if(medicamentos == null) {
             this.medicamentos = new ArrayList<>();
         } else {

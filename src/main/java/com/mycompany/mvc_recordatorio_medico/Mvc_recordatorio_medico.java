@@ -4,6 +4,8 @@
 
 package com.mycompany.mvc_recordatorio_medico;
 
+import com.mycompany.mvc_recordatorio_medico.controller.ControladorMedicamentos;
+
 /**
  *
  * @author Mizu
@@ -11,6 +13,9 @@ package com.mycompany.mvc_recordatorio_medico;
 public class Mvc_recordatorio_medico {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        ControladorMedicamentos controlador = new ControladorMedicamentos();
+        
+        controlador.iniciar();
+        
     }
 }
