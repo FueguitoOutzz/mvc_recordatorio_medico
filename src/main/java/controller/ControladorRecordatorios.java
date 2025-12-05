@@ -1,6 +1,6 @@
-package com.mycompany.mvc_recordatorio_medico.controller;
+package controller;
 
-import com.mycompany.mvc_recordatorio_medico.model.Recordatorio;
+import model.Recordatorio;
 import java.util.ArrayList;
 import java.util.List;
 

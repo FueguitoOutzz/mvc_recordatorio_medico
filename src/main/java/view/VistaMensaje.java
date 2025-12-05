@@ -1,4 +1,4 @@
-package com.mycompany.mvc_recordatorio_medico.view;
+package view;
 
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;

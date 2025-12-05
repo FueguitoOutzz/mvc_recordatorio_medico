@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.mvc_recordatorio_medico.view;
+package view;
 
 import javax.swing.JButton;
 import javax.swing.JTable;
@@ -46,6 +46,10 @@ public class VistaMedicamentos extends javax.swing.JFrame {
     public JTable getTabla(){
         return Tabla;
     }
+    
+    public JButton getVolverButton(){
+        return VolverButton;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -59,6 +63,7 @@ public class VistaMedicamentos extends javax.swing.JFrame {
         Información_Panel = new javax.swing.JPanel();
         Header = new javax.swing.JPanel();
         Título = new javax.swing.JLabel();
+        VolverButton = new javax.swing.JButton();
         Formulario = new javax.swing.JPanel();
         Datos = new javax.swing.JPanel();
         NombreCampo = new javax.swing.JPanel();
@@ -82,6 +87,13 @@ public class VistaMedicamentos extends javax.swing.JFrame {
         Título.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Título.setText("Medicamentos");
 
+        VolverButton.setText("Volver");
+        VolverButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VolverButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout HeaderLayout = new javax.swing.GroupLayout(Header);
         Header.setLayout(HeaderLayout);
         HeaderLayout.setHorizontalGroup(
@@ -89,11 +101,15 @@ public class VistaMedicamentos extends javax.swing.JFrame {
             .addGroup(HeaderLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Título)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(VolverButton)
+                .addContainerGap())
         );
         HeaderLayout.setVerticalGroup(
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Título)
+            .addGroup(HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(Título)
+                .addComponent(VolverButton))
         );
 
         NombreText.setText("Nombre");
@@ -226,7 +242,7 @@ public class VistaMedicamentos extends javax.swing.JFrame {
                 .addGroup(DatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AgregarButton)
                     .addComponent(LimpiarButton))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout FormularioLayout = new javax.swing.GroupLayout(Formulario);
@@ -333,6 +349,10 @@ public class VistaMedicamentos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_AgregarButtonActionPerformed
 
+    private void VolverButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_VolverButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -377,6 +397,7 @@ public class VistaMedicamentos extends javax.swing.JFrame {
     private javax.swing.JTable Tabla;
     private javax.swing.JPanel Tabla_Panel;
     private javax.swing.JLabel Título;
+    private javax.swing.JButton VolverButton;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

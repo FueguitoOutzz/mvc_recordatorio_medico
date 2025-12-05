@@ -1,4 +1,4 @@
-package com.mycompany.mvc_recordatorio_medico.model;
+package model;
 
 public abstract class Usuario {
     private String id;

@@ -1,6 +1,6 @@
-package com.mycompany.mvc_recordatorio_medico.view;
+package view;
 
-import com.mycompany.mvc_recordatorio_medico.model.Recordatorio;
+import model.Recordatorio;
 import java.util.List;
 import java.util.Scanner;
 

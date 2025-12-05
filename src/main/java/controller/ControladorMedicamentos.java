@@ -2,12 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.mvc_recordatorio_medico.controller;
+package controller;
 
-import com.mycompany.mvc_recordatorio_medico.model.GestorMedicamentos;
-import com.mycompany.mvc_recordatorio_medico.model.Medicamento;
-import com.mycompany.mvc_recordatorio_medico.view.VistaMedicamentos;
-import com.mycompany.mvc_recordatorio_medico.view.VistaMensaje;
+import model.GestorMedicamentos;
+import model.Medicamento;
+import view.VistaMedicamentos;
+import view.VistaMensaje;
 import javax.swing.table.DefaultTableModel;
 
 
@@ -18,15 +18,22 @@ import javax.swing.table.DefaultTableModel;
 public class ControladorMedicamentos {
     private GestorMedicamentos gestor;
     private VistaMedicamentos vista;
+    //private ControladorMenu menu;
     
     public ControladorMedicamentos(){
         this.gestor = new GestorMedicamentos();
         this.vista = new VistaMedicamentos();
+        //this.menu = new ControladorMenu();
     }
     
     public void iniciar(){
         this.vista.setVisible(true);
         this.vista.getAgregarBtn().addActionListener(e -> agregarMedicamento());
+        this.vista.getLimpiarButton().addActionListener(e -> limpiarFormulario());
+        /*this.vista.getVolverButton().addActionListener(e -> {
+            
+            //this.menu.iniciar();
+        });*/
     }
     
     public void agregarMedicamento(){
@@ -62,4 +69,7 @@ public class ControladorMedicamentos {
         this.vista.getFrecuenciaField().setText("");
         this.vista.getNombreField().requestFocus();
     }
+    
+    
+    
 }
